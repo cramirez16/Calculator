@@ -1,0 +1,336 @@
+@font-face {
+  font-family: calculator;
+  src: url(./fonts/calculator.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 400px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 0px;
+  background: black;
+}
+.title {
+  font-family: "Sprinkled", sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  color: rgb(230, 214, 187);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 530px;
+  width: 367px;
+}
+
+.cal_head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180px;
+  border-top: 4px solid grey;
+  border-left: 14px solid grey;
+  border-right: 14px solid grey;
+  border-bottom: 8px solid grey;
+  border-radius: 15px 15px 0 0;
+  background-color: grey;
+}
+
+.cal_head > .inner_border {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 8px;
+  background: black;
+  padding: 0px 8px;
+}
+
+.display_head {
+  display: flex;
+  justify-content: space-between;
+  height: 35%;
+  width: 100%;
+}
+
+.title_left {
+  display: flex;
+  flex-direction: column;
+  width: 56%;
+  height: 100%;
+  padding-top: 8px;
+  padding-left: 9px;
+}
+
+.title_left_row01 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.title_left_row01 > div {
+  display: flex;
+  align-items: baseline;
+}
+
+.circle {
+  position: relative;
+  height: 18px;
+  color: grey;
+  top: 3px;
+  left: -1px;
+}
+
+.title_left > .title_left_row01 > div > h3 {
+  display: inline;
+  font-size: 16px;
+  color: grey;
+  margin: 0;
+  padding: 0;
+}
+
+.title_left > h5,
+.title_left > .title_left_row01 > h5 {
+  display: inline;
+  font-size: 12px;
+  color: grey;
+  margin: 0;
+  padding: 2px 0;
+}
+
+.title_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 12%;
+  height: 100%;
+}
+
+.title_right > h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  margin: 0;
+  font-size: 18px;
+  color: rgb(222, 222, 222);
+  background: grey;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.title_right > h5 {
+  font-size: 10px;
+  color: grey;
+  margin: 0;
+  padding: 3px 0;
+}
+
+.display_screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 100%;
+  border-top: 8px solid rgb(174, 174, 174);
+  border-left: 8px solid rgb(174, 174, 174);
+  border-right: 8px solid rgb(174, 174, 174);
+  border-bottom: 8px solid rgb(174, 174, 174);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: rgb(174, 174, 174);
+}
+
+.display_screen > .inner_border {
+  display: flex;
+  justify-content: right;
+  align-items: end;
+  padding-right: 8px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 8px;
+  background: rgb(108, 148, 143);
+  font-family: calculator;
+  font-size: 50px;
+  color: rgba(196, 214, 224, 0.892);
+  text-shadow: 1px 1px 2px black;
+}
+
+.cal_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(530px - 180px);
+  border-left: 6px solid grey;
+  border-right: 6px solid grey;
+  border-bottom: 14px solid grey;
+  border-radius: 0px 0px 15px 15px;
+  padding: 0px 8px;
+  background: grey;
+}
+.cal_body > .inner_border {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  row-gap: 10px;
+  border: 1px solid rgb(161, 224, 217);
+  border-radius: 8px;
+  /* background: rgb(108, 148, 143); */
+  background: rgb(112, 134, 131);
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  color: rgb(187, 229, 255);
+  background: rgb(50, 141, 166);
+  border: 1px solid rgb(50, 141, 166);
+  box-shadow: 3px 3px 3px 0px rgba(72, 90, 96, 0.8);
+}
+
+button:hover {
+  background: rgb(62, 157, 183);
+}
+
+button:active {
+  box-shadow: 1px 1px 1px 0px rgba(72, 90, 96, 0.8);
+}
+
+#row4 > #col4 {
+  height: 100px;
+}
+
+#row0 > button {
+  border-top-right-radius: 12.5px;
+  border-bottom-right-radius: 12.5px;
+  border-top-left-radius: 12.5px;
+  border-bottom-left-radius: 12.5px;
+}
+
+#row0,
+.row {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 20px;
+}
+
+#row0 {
+  justify-content: right;
+  height: 25px;
+}
+
+.row {
+  justify-content: left;
+  height: 45px;
+}
+
+/* .container_buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+} */
+
+/* button {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 16px;
+  border-radius: 5px;
+  max-width: 70px;
+  margin-left: 10%;
+  padding: 5px 10px;
+  justify-content: center;
+  font-family: "Sprinkled", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(230, 214, 187);
+  background: rgb(108, 108, 108);
+  box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container_buttons > button:hover {
+  color: rgb(99, 226, 103);
+  background: rgb(140, 140, 140) !important;
+} */
+
+/* main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background: rgb(140, 140, 140);
+  height: 100%;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+main > p {
+  margin: 0;
+  padding: 0;
+} */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+  color: rgb(230, 214, 187);
+  background: black;
+  font-size: 20px;
+  margin: 0;
+}
+
+.fa-github {
+  color: rgb(230, 214, 187);
+  font-size: 28px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotateY(360deg) scale(1);
+}
