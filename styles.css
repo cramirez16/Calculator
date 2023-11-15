@@ -3,6 +3,30 @@
   src: url(./fonts/calculator.ttf);
 }
 
+:root {
+  --main-bg-color: black;
+  --header-title-font-color: rgb(230, 214, 187);
+  --border-color: rgb(105, 105, 105);
+  --inner-border-header-color: black;
+  --calc-head-font-color: grey;
+  --head-digits-num-color: rgb(212, 212, 212);
+  --screen-border-color: rgb(174, 174, 174);
+  --screen-inner-border-color: rgb(210, 210, 210);
+  --screen-font-color: rgba(196, 214, 224, 0.892);
+  --screen-bg-color: rgb(108, 148, 143);
+  --screen-font-shadow-color: black;
+  --calc-body-inner-border-color: rgb(161, 224, 217);
+  --keypad-bg-color: rgb(112, 134, 131);
+  --button-font-color: rgb(187, 229, 255);
+  --button-bg-color: rgb(50, 141, 166);
+  --button-border-color: rgb(50, 141, 166);
+  --button-shadow-color: rgba(72, 90, 96, 0.8);
+  --button-hover-color: rgb(62, 157, 183);
+  --button-active-shadow-color: rgba(72, 90, 96, 0.8);
+  --footer-font-color: rgb(230, 214, 187);
+  --footer-bg-color: black;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +37,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: black;
+  background: var(--main-bg-color);
 }
 
 .main-container {
@@ -30,13 +54,12 @@ header {
   align-items: center;
   width: 100%;
   padding: 16px 0px;
-  background: black;
 }
 .title {
   font-family: "Sprinkled", sans-serif;
   font-size: 64px;
   font-weight: 400;
-  color: rgb(230, 214, 187);
+  color: var(--header-title-font-color);
   margin: 0;
   padding: 0;
 }
@@ -53,12 +76,10 @@ header {
   flex-direction: column;
   align-items: center;
   height: 180px;
-  border-top: 4px solid grey;
-  border-left: 14px solid grey;
-  border-right: 14px solid grey;
-  border-bottom: 8px solid grey;
+  border: 4px solid var(--border-color);
+  border-width: 4px 14px 8px; /* top, left/right, bottom */
   border-radius: 15px 15px 0 0;
-  background-color: grey;
+  background-color: var(--border-color);
 }
 
 .cal_head > .inner_border {
@@ -67,9 +88,9 @@ header {
   align-items: center;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border: 1px solid var(--inner-border-header-color);
   border-radius: 8px;
-  background: black;
+  background: var(--inner-border-header-color);
   padding: 0px 8px;
 }
 
@@ -104,7 +125,7 @@ header {
 .circle {
   position: relative;
   height: 18px;
-  color: grey;
+  color: var(--border-color);
   top: 3px;
   left: -1px;
 }
@@ -112,7 +133,7 @@ header {
 .title_left > .title_left_row01 > div > h3 {
   display: inline;
   font-size: 16px;
-  color: grey;
+  color: var(--calc-head-font-color);
   margin: 0;
   padding: 0;
 }
@@ -121,7 +142,7 @@ header {
 .title_left > .title_left_row01 > h5 {
   display: inline;
   font-size: 12px;
-  color: grey;
+  color: var(--calc-head-font-color);
   margin: 0;
   padding: 2px 0;
 }
@@ -142,8 +163,8 @@ header {
   padding: 2px;
   margin: 0;
   font-size: 18px;
-  color: rgb(222, 222, 222);
-  background: grey;
+  color: var(--head-digits-num-color);
+  background: var(--calc-head-font-color);
   width: 28px;
   height: 28px;
   border-radius: 14px;
@@ -152,7 +173,7 @@ header {
 
 .title_right > h5 {
   font-size: 10px;
-  color: grey;
+  color: var(--calc-head-font-color);
   margin: 0;
   padding: 3px 0;
 }
@@ -163,15 +184,10 @@ header {
   align-items: center;
   height: 60%;
   width: 100%;
-  border-top: 8px solid rgb(174, 174, 174);
-  border-left: 8px solid rgb(174, 174, 174);
-  border-right: 8px solid rgb(174, 174, 174);
-  border-bottom: 8px solid rgb(174, 174, 174);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background: rgb(174, 174, 174);
+  border: 8px solid var(--screen-border-color);
+  border-radius: 10px 10px 15px 15px; /* topleft, topright, bottom-right, bottom-left*/
+  background: var(--screen-border-color);
+  background: var(--screen-border-color);
 }
 
 .display_screen > .inner_border {
@@ -181,13 +197,13 @@ header {
   padding-right: 8px;
   width: 100%;
   height: 100%;
-  border: 1px solid rgb(210, 210, 210);
-  border-radius: 8px;
-  background: rgb(108, 148, 143);
-  font-family: calculator;
+  border: 1px solid var(--screen-inner-border-color);
   font-size: 50px;
-  color: rgba(196, 214, 224, 0.892);
-  text-shadow: 1px 1px 2px black;
+  color: var(--screen-font-color);
+  text-shadow: 1px 1px 2px var(--screen-font-shadow-color);
+  background: var(--screen-bg-color);
+  border-radius: 8px;
+  font-family: calculator;
 }
 
 .cal_body {
@@ -196,12 +212,12 @@ header {
   align-items: center;
   width: 100%;
   height: calc(530px - 180px);
-  border-left: 6px solid grey;
-  border-right: 6px solid grey;
-  border-bottom: 14px solid grey;
+  border-left: 6px solid var(--border-color);
+  border-right: 6px solid var(--border-color);
+  border-bottom: 14px solid var(--border-color);
   border-radius: 0px 0px 15px 15px;
   padding: 0px 8px;
-  background: grey;
+  background: var(--border-color);
 }
 .cal_body > .inner_border {
   display: flex;
@@ -210,10 +226,9 @@ header {
   height: 100%;
   padding: 16px;
   row-gap: 10px;
-  border: 1px solid rgb(161, 224, 217);
+  border: 1px solid var(--calc-body-inner-border-color);
   border-radius: 8px;
-  /* background: rgb(108, 148, 143); */
-  background: rgb(112, 134, 131);
+  background: var(--keypad-bg-color);
 }
 
 button {
@@ -224,18 +239,18 @@ button {
   font-size: 15px;
   padding: 0;
   margin: 0;
-  color: rgb(187, 229, 255);
-  background: rgb(50, 141, 166);
-  border: 1px solid rgb(50, 141, 166);
-  box-shadow: 3px 3px 3px 0px rgba(72, 90, 96, 0.8);
+  color: var(--button-font-color);
+  background: var(--button-bg-color);
+  border: 1px solid var(--button-border-color);
+  box-shadow: 3px 3px 3px 0px var(--button-shadow-color);
 }
 
 button:hover {
-  background: rgb(62, 157, 183);
+  background: var(--button-hover-color);
 }
 
 button:active {
-  box-shadow: 1px 1px 1px 0px rgba(72, 90, 96, 0.8);
+  box-shadow: 1px 1px 1px 0px var(--button-active-shadow-color);
 }
 
 #row4 > #col4 {
@@ -267,66 +282,20 @@ button:active {
   height: 45px;
 }
 
-/* .container_buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-} */
-
-/* button {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 16px;
-  border-radius: 5px;
-  max-width: 70px;
-  margin-left: 10%;
-  padding: 5px 10px;
-  justify-content: center;
-  font-family: "Sprinkled", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: rgb(230, 214, 187);
-  background: rgb(108, 108, 108);
-  box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
-}
-
-.container_buttons > button:hover {
-  color: rgb(99, 226, 103);
-  background: rgb(140, 140, 140) !important;
-} */
-
-/* main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  background: rgb(140, 140, 140);
-  height: 100%;
-  border-radius: 100px;
-  overflow: hidden;
-}
-
-main > p {
-  margin: 0;
-  padding: 0;
-} */
-
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   gap: 16px;
-  color: rgb(230, 214, 187);
-  background: black;
+  color: var(--footer-font-color);
+  background: var(--footer-bg-color);
   font-size: 20px;
   margin: 0;
 }
 
 .fa-github {
-  color: rgb(230, 214, 187);
+  color: var(--footer-font-color);
   font-size: 28px;
   transition: transform 0.3s ease-in-out;
 }
