@@ -1,4 +1,5 @@
 "use strict";
+
 export class Display {
   operation;
   digits;

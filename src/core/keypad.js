@@ -1,13 +1,13 @@
 "use strict";
-import { GranTotal } from "../special-operations/gran-total.js";
-import { Percentage } from "../arimethic-operations/percentage.js";
-import { MarkUp } from "../special-operations/markup.js";
-import { Off } from "../special-operations/off.js";
-import { Mrc } from "../special-operations/mrc.js";
-import { SubMemory } from "../special-operations/sub-memory.js";
-import { AddMemory } from "../special-operations/add-memory.js";
-import { Division } from "../arimethic-operations/division.js";
-import { Sign } from "../special-operations/sign.js";
+import { GranTotal } from "../buttons/special-operations/gran-total.js";
+import { Percentage } from "../buttons/operators/arimethic-operations/percentage.js";
+import { MarkUp } from "../buttons/operators/arimethic-operations/markup.js";
+import { Off } from "../buttons/special-operations/off.js";
+import { Mrc } from "../buttons/special-operations/mrc.js";
+import { SubMemory } from "../buttons/special-operations/sub-memory.js";
+import { AddMemory } from "../buttons/special-operations/add-memory.js";
+import { Division } from "../buttons/operators/arimethic-operations/division.js";
+import { Sign } from "../buttons/special-operations/sign.js";
 import {
   Zero,
   ZeroZero,
@@ -20,15 +20,14 @@ import {
   Seven,
   Eight,
   Nine,
-} from "../numbers/numbers.js";
-
-import { Multiply } from "../arimethic-operations/multiplay.js";
-import { BackSpace } from "../special-operations/backspace.js";
-import { Subs } from "../arimethic-operations/substraction.js";
-import { OnC } from "../special-operations/on-c.js";
-import { Sum } from "../arimethic-operations/addition.js";
-import { DecimalPoint } from "../special-operations/decimal-point.js";
-import { EqualSign } from "../special-operations/equal.js";
+} from "../buttons/numbers/numbers.js";
+import { Multiply } from "../buttons/operators/arimethic-operations/multiplay.js";
+import { BackSpace } from "../buttons/special-operations/backspace.js";
+import { Subs } from "../buttons/operators/arimethic-operations/substraction.js";
+import { OnC } from "../buttons/special-operations/on-c.js";
+import { Sum } from "../buttons/operators/arimethic-operations/addition.js";
+import { DecimalPoint } from "../buttons/special-operations/decimal-point.js";
+import { EqualSign } from "../buttons/special-operations/equal.js";
 
 export class Keypad {
   #buttons;
