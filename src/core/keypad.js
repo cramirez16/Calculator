@@ -37,6 +37,7 @@ export class Keypad {
     this.#memory = memory;
     this.#display = display;
     this.#initButtons();
+    this.#addEvent();
   }
   #initButtons() {
     this.#buttons = {
@@ -80,5 +81,19 @@ export class Keypad {
         col3: new EqualSign(this.#memory, this.#display),
       },
     };
+  }
+
+  #addEvent() {
+    const e = document
+      .querySelector(".cal_body>.inner_border")
+      .addEventListener("click", this.callBack.bind(this));
+  }
+
+  callBack(e) {
+    const element = e.target;
+    if (element.nodeName !== "BUTTON") return;
+    const row = element.parentElement.id;
+    const col = element.id;
+    return this.#buttons[row][col].callBack();
   }
 }

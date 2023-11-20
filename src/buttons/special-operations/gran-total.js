@@ -10,6 +10,6 @@ export class GranTotal extends Button {
     this.memory = memory;
   }
   $function() {
-    return this.memory.grandTotal;
+    return this.memory.grandTotal.toString();
   }
 }
